@@ -9,7 +9,10 @@ commander() {
 
  dir_root=$( cd $(dirname $0); echo $PWD; )
  cd $(npm -g root)/se-interpreter
-
+ npm ls
+ npm install -g
+ npm link
+ npm ls
 
 file_ok=$dir_root/ok.json
 file_err=$dir_root/err.json
