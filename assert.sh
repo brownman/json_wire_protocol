@@ -1,9 +1,12 @@
 #!/bin/bash
+trace(){
+        echo 1>&2  "$@"
+}
 
 commander() { 
     local args=($@)
     local cmd="${args[@]}"
-    echo 1>&2  "[cmd] $cmd"
+    trace  "[cmd] $cmd"
     eval "$cmd"
 }
 
@@ -20,6 +23,12 @@ file_err=$dir_root/err.json
 
 test -f $file_ok
 test -f $file_err
+
+
+
+trace using CURL
+commander chmod u+x curl/create_session.sh
+commander curl/create_session.sh
 
 
 ( commander node interpreter.js  $file_ok )
