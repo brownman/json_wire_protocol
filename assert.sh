@@ -8,11 +8,15 @@ commander() {
     eval "$cmd"
 }
 
+ dir_root=$( cd dirname $0; echo $PWD; )
+ cd $(npm -g root)/se-interpreter
 
+file_ok=$dir_root/ok.json
+file_err=$dir_root/err.json
 
-( commander node interpreter.js printTitleOk.json 1>/dev/null  )
+( commander node interpreter.js  $file_ok 1>/dev/null  )
 echo "============================== $?"
 #commander sleep 3
 
-( commander node interpreter.js printTitleErr.json 1>/dev/null  )
+( commander node interpreter.js  $file_err 1>/dev/null  )
 echo "============================== $?"
