@@ -1,8 +1,17 @@
 language: node_js
-script:
+
+cache: 
+  - npm
+  - apt
+  
+install:
+  - apt-get install curl
   - npm install -g se-interpreter
+  
+script:
+  - chmod u+x ./curl/create_session.sh
+  - bash -c ./curl/create_session.sh
+
+after_script:
   - chmod u+x ./assert.sh
   - bash -c ./assert.sh
-  
-after_script:
-  - blah
