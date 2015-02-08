@@ -14,8 +14,7 @@ before_script:
   - "export DISPLAY=:99.0"
   - "wget http://selenium.googlecode.com/files/selenium-server-standalone-2.25.0.jar"
   - "java -jar selenium-server-standalone-2.25.0.jar > /dev/null 2>&1 &"
-  - "sleep 30"
- 
+
 script:
   - chmod u+x ./curl/create_session.sh
   - bash -c ./curl/create_session.sh
