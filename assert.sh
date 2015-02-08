@@ -8,7 +8,7 @@ commander() {
     eval "$cmd"
 }
 
- dir_root=$( cd dirname $0; echo $PWD; )
+ dir_root=$( cd $(dirname $0); echo $PWD; )
  cd $(npm -g root)/se-interpreter
 
 file_ok=$dir_root/ok.json
