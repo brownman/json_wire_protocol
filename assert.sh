@@ -25,12 +25,6 @@ test -f $file_ok
 test -f $file_err
 
 
-
-trace using CURL
-commander chmod u+x curl/create_session.sh
-commander curl/create_session.sh
-
-
 ( commander node interpreter.js  $file_ok )
 echo "============================== $?"
 #commander sleep 3
