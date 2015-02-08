@@ -21,12 +21,6 @@ test -f $file_ok
 test -f $file_err
 }
 
-steps(){
-set_env
-ensure
-pre_run
-run
-}
 
 pre_run(){
 cd $(npm -g root)/se-interpreter
@@ -44,3 +38,12 @@ echo "============================== $?"
 }
 
 
+steps(){
+set_env
+ensure
+pre_run
+run
+}
+
+
+steps
