@@ -1,0 +1,23 @@
+{
+    "type": "script",
+    "seleniumVersion": "2",
+    "formatVersion": 1,
+    "steps": [
+    {
+        "type": "get",
+        "url": "http://google.com"
+    },
+    {
+        "type": "storeTitle",
+        "variable": "t"
+    },
+    {
+        "type": "print",
+        "text": "______________________________Title: ${t}"
+    },
+    {
+        "type": "assertTitle",
+        "title": "Google"
+    }
+    ]
+}
