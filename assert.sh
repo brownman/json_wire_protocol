@@ -1,7 +1,14 @@
 #!/bin/bash
 
 
-alias commander=eval
+commander() { 
+    local args=($@)
+    local cmd="${args[@]}"
+    echo 1>&2  "[cmd] $cmd"
+    eval "$cmd"
+}
+
+
 
 ( commander node interpreter.js printTitleOk.json 1>/dev/null  )
 echo "============================== $?"
