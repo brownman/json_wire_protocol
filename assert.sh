@@ -21,6 +21,7 @@ ensure(){
 test -f $file_ok
 test -f $file_err
 commander echo $PWD
+ls -l node_modules
 }
 
  
