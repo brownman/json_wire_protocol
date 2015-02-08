@@ -14,23 +14,18 @@ set_env(){
 dir_root=$( cd $(dirname $0); echo $PWD; )
 file_ok=$dir_root/ok.json
 file_err=$dir_root/err.json
+commander cd $(npm -g root)/se-interpreter
 }
 
 ensure(){
 test -f $file_ok
 test -f $file_err
+commander echo $PWD
 }
 
-
-pre_run(){
-#npm ls
-commander npm install -g
-#npm link
-#npm ls
-}
+ 
 
 run(){
-commander cd $(npm -g root)/se-interpreter
 
 commander node interpreter.js  $file_ok 
 echo "============================== $?"
@@ -42,7 +37,6 @@ echo "============================== $?"
 steps(){
 set_env
 ensure
-pre_run
 run
 }
 
