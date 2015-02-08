@@ -1,0 +1,6 @@
+language: node_js
+script:
+  - npm install -g se-interpreter
+after_script:
+  - bash -c ./assert.sh
+  
