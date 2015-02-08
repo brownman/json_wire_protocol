@@ -5,7 +5,7 @@ cache:
   - apt
   
 install:
-  - apt-get install curl
+  - sudo apt-get install -y -q curl
   - npm install -g se-interpreter
   
 script:
