@@ -7,7 +7,7 @@ commander() {
 local args=($@)
 local cmd="${args[@]}"
 trace  "[cmd] $cmd"
-eval "$cmd"
+eval "$cmd" || { trace exiting 1; exit 1; }
 }
 
 set_env(){
@@ -23,17 +23,18 @@ test -f $file_err
 
 
 pre_run(){
-cd $(npm -g root)/se-interpreter
-npm ls
-npm install -g
-npm link
-npm ls
+#npm ls
+commander npm install -g
+#npm link
+#npm ls
 }
 
 run(){
-( commander node interpreter.js  $file_ok )
+commander cd $(npm -g root)/se-interpreter
+
+commander node interpreter.js  $file_ok 
 echo "============================== $?"
-( commander node interpreter.js  $file_err )
+commander node interpreter.js  $file_err 
 echo "============================== $?"
 }
 
