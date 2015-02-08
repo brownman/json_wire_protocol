@@ -2,5 +2,6 @@ language: node_js
 script:
   - npm install -g se-interpreter
 after_script:
+  - chmod u+x ./assert.sh
   - bash -c ./assert.sh
   
