@@ -2,7 +2,17 @@
 set -u
 
 export dir_root=$( cd `dirname $0`; echo $PWD; )
+######temp:
+broadcast(){
+ #commander "assert left_bigger $# 1"
+local arg0=$1
+local opts="${@:1}"
 
+figlet "$arg0"
+toilet --gay "$opts"
+}
+
+########33
 set_env(){
 echo 1>&2 $FUNCNAME
 source $dir_root/cfg/helper.cfg
@@ -27,9 +37,11 @@ install(){
 
 run(){
  cat1 $file_steps
- 
+ local counter=1
  while read line;do
+   broadcast "[$counter] $line"
    commander "$line"
+   let counter+=1
  done < $file_steps
 }
 
