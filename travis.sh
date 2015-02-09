@@ -9,7 +9,7 @@ source $dir_root/cfg/helper.cfg
 source $dir_root/cfg/vars.cfg
 }
 
-ensure(){
+ensure_stuff(){
  ensure test -v SELENIUM
  ensure test -f $file_steps
 }
@@ -42,11 +42,11 @@ run(){
 }
 
 steps(){
-set_env
-ensure
-fix_permission
-install
-run
+commander set_env
+commander ensure_stuff
+commander fix_permission
+commander install
+commander run
 }
 
 steps
