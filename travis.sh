@@ -1,13 +1,5 @@
 #!/bin/bash
-
-
-
 export dir_root=$( cd `dirname $0`; echo $PWD; )
-
-cat1(){
-local file=$1
-test -f $file && { trace $file;trace '-----';cat 1>&2 -n  $file; trace; } || true
-}
 
 set_env(){
 source $dir_root/cfg/helper.cfg
@@ -32,7 +24,7 @@ install(){
    commander cd $dir_selenium
    
    commander wget $url_selenium_server
-   commander test -f $selenium_jar
+   ensure test -f $selenium_jar
    commander wget $url_chrome_driver 
    commander unzip chromedriver*.zip
    commander rm chromedriver*.zip
