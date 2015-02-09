@@ -1,9 +1,8 @@
-CHROMEDRIVER_LINUX_URL='http://chromedriver.storage.googleapis.com/2.10/chromedriver_linux32.zip'
-SELENIUM=$HOME/SELENIUM
+
 
 #location
-mkdir -p $SELENIUM
-cd $SELENIUM
+mkdir -p $dir_selenium
+cd $dir_selenium
 
 #download + extract
 wget $CHROMEDRIVER_LINUX_URL 
