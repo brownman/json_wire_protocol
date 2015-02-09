@@ -1,4 +1,5 @@
 sudo apt-cache search cowsay figlet toilet
+sudo apt-get install figlet cowsay toilet
 $dir_root/sh/selenium_start_server.sh
 $dir_root/sh/curl_create_session.sh
 echo step last
