@@ -5,8 +5,8 @@ ensure test -f $chrome_driver
 ensure test -f $selenium_jar
 ensure which chromedriver
 
-( commander "java -jar $selenium_jar -timeout=20 -browserTimeout=60x" || { trace kill process; kill 0; }  )&
-# -Dwebdriver.chrome.driver=chromedriver
+( commander "java -jar $selenium_jar -timeout=20 -browserTimeout=60x -Dwebdriver.chrome.driver=chromedriver" || { trace kill process; kill 0; }  )&
+# 
 
 
 while true;do
