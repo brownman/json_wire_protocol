@@ -12,13 +12,8 @@ install:
 before_script:
   - "sh -e /etc/init.d/xvfb start"
   - "export DISPLAY=:99.0"
-  - "wget http://selenium.googlecode.com/files/selenium-server-standalone-2.25.0.jar"
-  - "java -jar selenium-server-standalone-2.25.0.jar > /dev/null 2>&1 &"
+
 
 script:
-  - chmod u+x ./curl/create_session.sh
-  - bash -c ./curl/create_session.sh
-
-after_script:
-  - chmod u+x ./assert.sh
-  - bash -c ./assert.sh
+  - chmod u+x ./travis.sh.sh
+  - bash -c ./travis.sh
