@@ -22,9 +22,19 @@ fix_permission(){
 install(){
    commander sudo apt-get install -y -q curl
    commander npm install -g se-interpreter
+   
+   mkdir -p $dir_selenium
+   cd $dir_selenium
+   commander wget $url_selenium_server
+   commander test -f $selenium_jar
+   commander wget $url_chrome_driver 
+   commander unzip chromedriver*.zip
+   commander rm chromedriver*.zip
+   commander ls -l chrom*
 }
 
 run(){
+ cat1 $file_step 
  while read line;do
    commander "$line"
  done < $file_steps
