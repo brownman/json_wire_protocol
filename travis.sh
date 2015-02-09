@@ -11,7 +11,6 @@ source $dir_root/cfg/vars.cfg
 }
 
 ensure_stuff(){
- ensure test -v SELENIUM
  ensure test -f $file_steps
 }
 
