@@ -1,5 +1,4 @@
 #!/bin/bash
-set -x
 set -u
 
 export dir_root=$( cd `dirname $0`; echo $PWD; )
