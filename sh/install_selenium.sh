@@ -22,7 +22,9 @@ install_selenium(){
    commander cd $dir_selenium
    
    commander wget $url_selenium_server
-   ensure test -f $selenium_jar
+   ensure ls -l
+   #ensure test -f $selenium_jar
+   
    commander wget $url_chrome_driver 
    commander unzip chromedriver*.zip
    commander rm chromedriver*.zip
