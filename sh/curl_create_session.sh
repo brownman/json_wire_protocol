@@ -4,10 +4,6 @@
 #- Started SocketListener on 0.0.0.0:4443
 
 
-while true;do
-  ( netstat -ntlp | grep 4444 ) && break || { echo selenium-server still down; } 
-  sleep 1
-done
 
 echo POST /session {"desiredCapabilities":{"browserName":"chrome","version":"","javascriptEnabled":true,"platform":"ANY"}}
 curl -i --data '{"desiredCapabilities":{"browserName":"chrome","version":"","platform":"ANY","javascriptEnabled":true}}' http://localhost:4444/wd/hub/session
