@@ -7,3 +7,4 @@ use JSON to drive SELENIUM
 links
 ----
 [ installing selenium-chrome-driver ](https://github.com/sebv/sv-selenium/tree/master/bin)
+[ chrome-driver ](https://sites.google.com/a/chromium.org/chromedriver/capabilities)
