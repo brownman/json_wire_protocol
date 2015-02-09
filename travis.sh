@@ -4,9 +4,13 @@
 
 export dir_root=$( cd `dirname $0`; echo $PWD; )
 
+cat1(){
+local file=$1
+test -f $file && { trace $file;trace '-----';cat 1>&2 -n  $file; trace; } || true
+}
 
 set_env(){
-source $dir_root/cfg/config.cfg
+source $dir_root/cfg/helper.cfg
 source $dir_root/cfg/vars.cfg
 }
 
@@ -16,7 +20,7 @@ ensure(){
 }
 
 fix_permission(){
-  commander chmod u+x *.sh . -R
+ commander chmod u+x *.sh . -R
 }
 
 install(){
@@ -24,8 +28,8 @@ install(){
    commander npm install -g se-interpreter
    
    #update selenium + chrome-driver
-   mkdir -p $dir_selenium
-   cd $dir_selenium
+   commander mkdir -p $dir_selenium
+   commander cd $dir_selenium
    
    commander wget $url_selenium_server
    commander test -f $selenium_jar
