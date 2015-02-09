@@ -3,14 +3,16 @@
 
 
 export dir_root=$( cd `dirname $0`; echo $PWD; )
-ensure(){
-  test -v SELENIUM
-  test -f $file_step
-}
+
 
 set_env(){
 source $dir_root/cfg/config.cfg
 source $dir_root/cfg/vars.cfg
+}
+
+ensure(){
+  test -v SELENIUM
+  test -f $file_steps
 }
 
 fix_permission(){
@@ -25,7 +27,7 @@ install(){
 run(){
  while read line;do
    commander "$line"
- done < $file_step
+ done < $file_steps
 }
 
 steps(){
