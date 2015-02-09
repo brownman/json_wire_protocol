@@ -4,11 +4,17 @@
 #- Started SocketListener on 0.0.0.0:4443
 
 
-
+use_chrome(){
 echo POST /session {"desiredCapabilities":{"browserName":"chrome","version":"","javascriptEnabled":true,"platform":"ANY"}}
-curl -i --data '{"desiredCapabilities":{"browserName":"chrome","version":"","platform":"ANY","javascriptEnabled":true}}' http://localhost:4444/wd/hub/session
+curl -i --data '{"desiredCapabilities":{"browserName":"chrome","version":"","platform":"ANY","javascriptEnabled":true}}' $HTTP_INTERFACE
+#http://localhost:4444/wd/hub/session
+}
 
-#echo POST /session {"desiredCapabilities":{"browserName":"firefox","version":"","javascriptEnabled":true,"platform":"ANY"}}
-#curl -i --data '{"desiredCapabilities":{"browserName":"firefox","version":"","platform":"ANY","javascriptEnabled":true}}' http://localhost:4444/wd/hub/session
+use_firefox(){
+echo POST /session {"desiredCapabilities":{"browserName":"firefox","version":"","javascriptEnabled":true,"platform":"ANY"}}
+curl -i --data '{"desiredCapabilities":{"browserName":"firefox","version":"","platform":"ANY","javascriptEnabled":true}}' $HTTP_INTERFACE
+#http://localhost:4444/wd/hub/session
+}
 
+use_chrome
 
