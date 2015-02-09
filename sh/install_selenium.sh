@@ -37,7 +37,7 @@ install_selenium(){
 
    commander rm chromedriver*.zip
    ensure ls -l chrom*
-     mv chromedriver /tmp/bin
+  commander   mv chromedriver /tmp/bin
 ensure test -f /tmp/bin/chromedriver
 }
 
