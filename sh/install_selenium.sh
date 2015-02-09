@@ -18,7 +18,7 @@ install_selenium_2(){
 
 install_chrome(){
   wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-  sudo sh -c 'echo \"deb http://dl.google.com/linux/chrome/deb/ stable main\" >> /etc/apt/sources.list.d/google.list'
+  sudo sh -c echo \"deb http://dl.google.com/linux/chrome/deb/ stable main\" >> /etc/apt/sources.list.d/google.list
   sudo apt-get update
   sudo apt-get install google-chrome-stable
 }
@@ -29,8 +29,8 @@ install_selenium(){
    commander cd $dir_selenium
    
    commander wget $url_selenium_server
-   ensure ls -l
-   #ensure test -f $selenium_jar
+  # ensure ls -l
+   ensure test -f $selenium_jar
    
    commander wget $url_chrome_driver 
    commander unzip chromedriver*.zip
