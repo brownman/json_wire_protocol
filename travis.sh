@@ -11,8 +11,8 @@ source $dir_root/cfg/vars.cfg
 }
 
 ensure(){
-  test -v SELENIUM
-  test -f $file_steps
+ ensure test -v SELENIUM
+ ensure test -f $file_steps
 }
 
 fix_permission(){
@@ -23,14 +23,16 @@ install(){
    commander sudo apt-get install -y -q curl
    commander npm install -g se-interpreter
    
+   #update selenium + chrome-driver
    mkdir -p $dir_selenium
    cd $dir_selenium
+   
    commander wget $url_selenium_server
    commander test -f $selenium_jar
    commander wget $url_chrome_driver 
    commander unzip chromedriver*.zip
    commander rm chromedriver*.zip
-   commander ls -l chrom*
+   ensure ls -l chrom*
 }
 
 run(){
