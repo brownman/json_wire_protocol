@@ -29,7 +29,7 @@ fix_permission(){
 }
 
 install(){
-   commander sudo apt-get install -y -q curl
+   commander sudo apt-get install -y -q $pkgs
    commander npm install -g se-interpreter
    #install_selenium
    commander $dir_root/sh/install_selenium.sh
