@@ -36,22 +36,18 @@ install_selenium(){
    
    commander wget $url_selenium_server
    ensure ls -l
-   #ensure test -f $selenium_jar
-   
-   commander wget $url_chrome_driver 
- 
+   ensure test -f $selenium_jar
 }
 
 install_chrome_driver2(){
-  
-    commander unzip chromedriver*.zip
-
-   commander rm chromedriver*.zip
-   ensure ls -l chrom*
-  commander   mv chromedriver /tmp/bin
+commander wget $url_chrome_driver 
+commander unzip chromedriver*.zip
+commander rm chromedriver*.zip
+ensure ls -l chrom*
+commander   mv chromedriver /tmp/bin
 ensure test -f /tmp/bin/chromedriver
 }
 
 commander install_chrome
-commander install_chrome_driver
+commander install_chrome_driver2
 commander install_selenium
