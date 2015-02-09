@@ -34,8 +34,11 @@ install_selenium(){
    
    commander wget $url_chrome_driver 
    commander unzip chromedriver*.zip
+
    commander rm chromedriver*.zip
    ensure ls -l chrom*
+     mv chromedriver /tmp/bin
+ensure test -f /tmp/bin/chromedriver
 }
 
 commander install_chrome
