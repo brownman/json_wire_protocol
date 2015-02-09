@@ -15,6 +15,12 @@ install_selenium_2(){
   unzip chromedriver_linux32_23.0.1240.0.zip
   mv chromedriver /tmp/bin
 }
+install_chrome_driver(){
+#npm install chromedriver
+#Or grab the source and
+node ./install.js
+ensure which chromedriver
+}
 
 install_chrome(){
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
@@ -33,7 +39,12 @@ install_selenium(){
    #ensure test -f $selenium_jar
    
    commander wget $url_chrome_driver 
-   commander unzip chromedriver*.zip
+ 
+}
+
+install_chrome_driver2(){
+  
+    commander unzip chromedriver*.zip
 
    commander rm chromedriver*.zip
    ensure ls -l chrom*
@@ -42,4 +53,5 @@ ensure test -f /tmp/bin/chromedriver
 }
 
 commander install_chrome
+commander install_chrome_driver
 commander install_selenium
