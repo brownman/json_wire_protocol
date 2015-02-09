@@ -2,7 +2,7 @@ language: node_js
 
 env:
   global:
-    - PATH=$PATH:/tmp/bin
+    - PATH=$PATH:/tmp/bin:/usr/games
     - REMOTE_ARG='--remote-url http://127.0.0.1:4444/wd/hub'
 
     #$BROWSER
