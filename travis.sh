@@ -17,23 +17,12 @@ ensure_stuff(){
 fix_permission(){
  commander chmod u+x *.sh . -R
 }
-install_selenium(){
-    #update selenium + chrome-driver
-   commander mkdir -p $dir_selenium
-   commander cd $dir_selenium
-   
-   commander wget $url_selenium_server
-   ensure test -f $selenium_jar
-   commander wget $url_chrome_driver 
-   commander unzip chromedriver*.zip
-   commander rm chromedriver*.zip
-   ensure ls -l chrom*
-}
 
 install(){
    commander sudo apt-get install -y -q curl
    commander npm install -g se-interpreter
    #install_selenium
+   commander $dir_root/sh/install_selenium.sh
 }
 
 run(){
