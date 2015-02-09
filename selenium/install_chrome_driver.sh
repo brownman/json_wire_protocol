@@ -1,4 +1,4 @@
-
+#!/bin/bash
 
 #location
 mkdir -p $dir_selenium
