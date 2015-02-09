@@ -5,6 +5,7 @@
 export dir_root=$( cd `dirname $0`; echo $PWD; )
 ensure(){
   test -v SELENIUM
+  test -f $file_step
 }
 
 set_env(){
@@ -24,7 +25,7 @@ install(){
 run(){
  while read line;do
    commander "$line"
- done < $file_steps
+ done < $file_step
 }
 
 steps(){
