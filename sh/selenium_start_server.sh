@@ -4,7 +4,8 @@ commander cd $dir_selenium
 ensure test -f $chrome_driver
 ensure test -f $selenium_jar
 ensure which chromedriver
-commander "java -jar $selenium_jar -timeout=20 -browserTimeout=60x -Dwebdriver.chrome.driver=chromedriver &"
+
+commander "java -jar $selenium_jar -timeout=20 -browserTimeout=60x -Dwebdriver.chrome.driver=chromedriver || { kill 0; } " &
 
 
 
