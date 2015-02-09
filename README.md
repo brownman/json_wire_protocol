@@ -4,3 +4,6 @@
 # json_wire_protocol
 use JSON to drive SELENIUM
 
+links
+----
+[ installing selenium-chrome-driver ](https://github.com/sebv/sv-selenium/tree/master/bin)
