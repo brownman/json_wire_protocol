@@ -36,7 +36,8 @@ install(){
 }
 
 run(){
- cat1 $file_step 
+ cat1 $file_steps
+ 
  while read line;do
    commander "$line"
  done < $file_steps
