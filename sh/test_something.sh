@@ -1,5 +1,5 @@
-trap 'echo trap: term; exit 0;' SIGTERM
-trap 'echo trap: term' EXIT
+trap 'echo trap: term - try to exit; exit 0;' SIGTERM
+trap 'echo trap: exit' EXIT
 
 
 ( { echo someerr now; some_err; } || { kill 0; } )&
