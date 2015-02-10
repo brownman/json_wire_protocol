@@ -17,9 +17,6 @@ env:
 
 before_install:
   - mkdir -p $dir_tmp_bin
-  - chmod u+x sh/install_chromedriver.sh
-  - bash -c sh/install_chromedriver.sh
-
 
 before_script:
   # Setup headless X per http://about.travis-ci.org/docs/user/gui-and-headless-browsers/
