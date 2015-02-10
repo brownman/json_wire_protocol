@@ -3,18 +3,17 @@ language: node_js
 env:
   global:
     - PATH=$PATH:/tmp/bin:/usr/games
- #   - REMOTE_ARG='--remote-url'
-    - HTTP_INTERFACE='http://0.0.0.0:9515'
- #   - HTTP_INTERFACE='http://127.0.0.1:4444/wd/hub'
+    - PORT=9525
+    - HOST='http://0.0.0.0'
+    - HTTP_INTERFACE="$HOST:$PORT"
+   # - HTTP_INTERFACE='http://127.0.0.1:4444/wd/hub'
 
     #$BROWSER
   matrix:
     - BROWSER=chrome
-     #- BROWSER=chrome
-#python:
-#  - "2.6"
-#  - "2.7"
-  #- "3.2" # Fails miserably in Python 3
+  #python:
+  #  - "2.6"
+
 before_install:
   - chmod u+x sh/install_chromedriver.sh
   - bash -c sh/install_chromedriver.sh
