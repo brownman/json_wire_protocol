@@ -2,7 +2,8 @@ language: node_js
 
 env:
   global:
-    - PATH=$PATH:/tmp/bin:/usr/games
+    - dir_tmp_bin=/usr/bin
+    - PATH=$PATH:$dir_tmp_bin:/usr/games
     - PORT=9525
     - HOST='http://0.0.0.0'
     - HTTP_INTERFACE="$HOST:$PORT"
@@ -15,7 +16,7 @@ env:
   #  - "2.6"
 
 before_install:
-  - mkdir /tmp/bin
+  - mkdir -p $dir_tmp_bin
   - chmod u+x sh/install_chromedriver.sh
   - bash -c sh/install_chromedriver.sh
 
