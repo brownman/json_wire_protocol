@@ -1,5 +1,7 @@
 
 
+
+selenium_start1(){
 commander cd $dir_selenium
 ensure test -f $chrome_driver
 ensure test -f $selenium_jar
@@ -15,3 +17,10 @@ while true;do
 done
 
 trace Selenium is alive !
+}
+
+selenium_start(){
+  chromedriver &
+}
+
+selenium_start
