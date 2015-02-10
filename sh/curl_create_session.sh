@@ -17,7 +17,7 @@ curl -i --data '{"desiredCapabilities":{"browserName":"firefox","version":"","pl
 }
 
 check_status(){
-curl 0.0.0.0:4444/wd/hub/status
+curl $HTTP_INTERFACE/status
 }
 #use_chrome
 
