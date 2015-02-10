@@ -32,6 +32,7 @@ run(){
  cat1 $file_steps
  local counter=1
  while read line;do
+  test -n "$line" || { exiting 0; }
    broadcast $counter $line
    commander "$line"
    let counter+=1
