@@ -18,7 +18,7 @@ ensure_stuff(){
 }
 
 fix_permission(){
- commander chmod u+x *.sh . -R
+ commander chmod u+x *.sh $dir_root/sh -R
 }
 
 install(){
