@@ -2,7 +2,7 @@ language: node_js
 
 env:
   global:
-    - dir_tmp_bin=/usr/bin
+    - dir_tmp_bin=/tmp/bin
     - PATH=$PATH:$dir_tmp_bin:/usr/games
     - PORT=9525
     - HOST='http://0.0.0.0'
