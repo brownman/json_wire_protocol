@@ -1,7 +1,10 @@
+#!/usr/bin/env bash
+
+#ref: https://github.com/rtc-io/webrtc-testing-on-travis
 BROWSER=chrome  
 BVER=stable
 
-#!/usr/bin/env bash
+
 set -x
 set -e
 
@@ -31,7 +34,7 @@ popd > /dev/null
 
 # setup the virtual environment
 # as per: https://github.com/mozilla-b2g/gaia/blob/master/.travis.yml#L3
-source $SCRIPTPATH/venv.sh
+trace skip source $SCRIPTPATH/venv.sh
 
 uname -a
 cat /etc/lsb-release
