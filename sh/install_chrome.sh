@@ -39,7 +39,7 @@ trace skip source $SCRIPTPATH/venv.sh
 uname -a
 cat /etc/lsb-release
 
-sudo apt-get update --fix-missing
+mute sudo apt-get update --fix-missing
 echo "Getting $BVER version of $BROWSER"
 
 case $BROWSER in
@@ -54,7 +54,7 @@ android)
 chrome)
   export CHROME=google-chrome-${BVER}_current_amd64.deb
   wget https://dl.google.com/linux/direct/$CHROME
-  sudo dpkg --install $CHROME || sudo apt-get -f install
+  ( mute sudo dpkg --install $CHROME ) || mute sudo apt-get -f install
   which google-chrome
   ls -l `which google-chrome`
 
