@@ -28,7 +28,7 @@ script:
   - chmod u+x ./travis.sh
   - bash -c ./travis.sh
 
-after_script:
+after_failure:
   - chmod u+x ./sh/test_something.sh
   - bash -c ./sh/test_something.sh
   #- "salad --browser $BROWSER $REMOTE_ARG salad/features --verbosity=2"
