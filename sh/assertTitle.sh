@@ -8,12 +8,12 @@ file_err=$dir_root/json/err.json
 ensure_stuff(){
 ensure test -f $file_ok
 ensure test -f $file_err
-ensure ls -l node_modules
 }
 
 run(){
 #GOTO
 commander cd $(npm -g root)/se-interpreter
+ensure ls -l node_modules
 commander echo $PWD
 
 #RUN
