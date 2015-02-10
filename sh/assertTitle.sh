@@ -1,8 +1,13 @@
 #!/bin/bash
 
 set_env(){
+host='0.0.0.0'
+port=9515
 file_ok=$dir_root/json/ok.json
 file_err=$dir_root/json/err.json
+browser=chrome
+cmd_se='node ./interpreter.js   --driver-host=$host --driver-port=$port --browser=$browser'
+
 }
 
 ensure_stuff(){
@@ -10,16 +15,20 @@ ensure test -f $file_ok
 ensure test -f $file_err
 }
 
+pre_run(){
+  chromedriver &
+  sleep 5
+}
+
 run(){
 #GOTO
 commander cd $(npm -g root)/se-interpreter
-ensure ls -l node_modules
-commander echo $PWD
-
+#ensure ls -l node_modules
+#commander echo $PWD
 #RUN
-commander node interpreter.js  $file_ok 
+commander $cmd_se  $file_ok 
 echo "============================== $?"
-commander node interpreter.js  $file_err 
+commander $cmd_se  $file_err 
 echo "============================== $?"
 }
 
@@ -27,6 +36,7 @@ echo "============================== $?"
 steps(){
 commander set_env
 commander ensure_stuff
+commander pre_run
 commander run
 }
 
