@@ -16,5 +16,9 @@ curl -i --data '{"desiredCapabilities":{"browserName":"firefox","version":"","pl
 #http://localhost:4444/wd/hub/session
 }
 
-use_chrome
+check_status(){
+curl 0.0.0.0:4444/wd/hub/status
+}
+#use_chrome
 
+check_status
