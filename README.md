@@ -18,3 +18,8 @@ alternative
 ----
 - fork this: then update it
 - [selenium-travis](https://github.com/jarib/selenium-travis)
+
+
+finally
+-----
+- [docker hub + selenium](https://registry.hub.docker.com/search?q=selenium&s=stars)
