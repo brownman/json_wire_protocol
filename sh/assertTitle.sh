@@ -15,10 +15,7 @@ ensure test -f $file_ok
 ensure test -f $file_err
 }
 
-pre_run(){
-  chromedriver &
-  sleep 5
-}
+
 
 run(){
 #GOTO
@@ -36,7 +33,6 @@ echo "============================== $?"
 steps(){
 commander set_env
 commander ensure_stuff
-commander pre_run
 commander run
 }
 
