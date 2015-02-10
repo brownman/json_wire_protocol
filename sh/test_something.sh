@@ -1,4 +1,4 @@
-trap 'echo trap: term' SIGTERM
+trap 'echo trap: term; exit 0;' SIGTERM
 trap 'echo trap: term' EXIT
 
 
