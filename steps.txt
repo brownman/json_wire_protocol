@@ -1,4 +1,4 @@
-$dir_root/install_chrome.sh
+$dir_root/sh/install_chrome.sh
 $dir_root/sh/install_chromedriver.sh
 $dir_root/sh/selenium_start_server.sh
 $dir_root/server_is_online.sh
@@ -10,3 +10,7 @@ $dir_root/npm/selenium_webdriver/run.sh
 
 echo never reached this last step 
 
+Questions:
+-----------
+- comptability: chrome + chrome-driver
+- selenium-server with chrome VS chromedriver
