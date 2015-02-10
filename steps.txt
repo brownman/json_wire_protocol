@@ -1,3 +1,5 @@
+$dir_root/npm/selenium_webdriver/run.sh
+
 $dir_root/sh/selenium_start_server.sh
 $dir_root/sh/curl_create_session.sh
 echo step last
