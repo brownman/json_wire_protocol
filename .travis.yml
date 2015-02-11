@@ -5,7 +5,7 @@ env:
     - dir_tmp_bin=/tmp/bin
     - PATH=$PATH:$dir_tmp_bin:/usr/games
     - PORT=9515
-    - HOST='http://0.0.0.0'
+    - HOST='0.0.0.0'
     - HTTP_INTERFACE="$HOST:$PORT"
    # - HTTP_INTERFACE='http://127.0.0.1:4444/wd/hub'
 
