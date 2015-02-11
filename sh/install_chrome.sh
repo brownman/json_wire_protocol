@@ -54,16 +54,16 @@ android)
   ;;
 
 chrome)
-  export CHROME=google-chrome-${BVER}_current_amd64.deb
+  CHROME=google-chrome-${BVER}_current_amd64.deb
   wget https://dl.google.com/linux/direct/$CHROME
   ( mute sudo dpkg --install $CHROME ) || mute sudo apt-get -f install
   which google-chrome
   ls -l `which google-chrome`
 
   if [ -f /opt/google/chrome/chrome-sandbox ]; then
-    export CHROME_SANDBOX=/opt/google/chrome/chrome-sandbox
+    CHROME_SANDBOX=/opt/google/chrome/chrome-sandbox
   else
-    export CHROME_SANDBOX=$(ls /opt/google/chrome*/chrome-sandbox)
+    CHROME_SANDBOX=$(ls /opt/google/chrome*/chrome-sandbox)
   fi
 
   # Download a custom chrome-sandbox which works inside OpenVC containers (used on travis).
