@@ -24,8 +24,8 @@ commander cd $(npm -g root)/se-interpreter
 #commander echo $PWD
 #RUN
 cat1 $file_ok
-trace  $cmd_se  $file_ok
-$cmd_se  $file_ok 
+#trace  $cmd_se  $file_ok
+commander $cmd_se  $file_ok 
 
 echo "============================== $?"
 cat1 $file_err
