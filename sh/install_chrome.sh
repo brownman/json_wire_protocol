@@ -7,8 +7,8 @@ BROWSER=chrome
 BVER=stable
 
 
-set -x
-set -e
+#set -x
+#set -e
 
 # firefox base details
 MOZILLA_BUILDS=http://ftp.mozilla.org/pub/mozilla.org/firefox
