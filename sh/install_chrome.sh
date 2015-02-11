@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+trace mute stdout
+exec 1>/tmp/out
 #ref: https://github.com/rtc-io/webrtc-testing-on-travis
 BROWSER=chrome  
 BVER=stable
@@ -36,8 +38,8 @@ popd > /dev/null
 # as per: https://github.com/mozilla-b2g/gaia/blob/master/.travis.yml#L3
 trace skip source $SCRIPTPATH/venv.sh
 
-uname -a
-cat /etc/lsb-release
+#uname -a
+#cat /etc/lsb-release
 
 mute sudo apt-get update --fix-missing
 echo "Getting $BVER version of $BROWSER"
