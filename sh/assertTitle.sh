@@ -1,8 +1,8 @@
 #!/bin/bash
 
 set_env(){
-host='0.0.0.0'
-port=9515
+host=$HOST
+port=$PORT
 path='/'
 file_ok=$dir_root/json/ok.json
 file_err=$dir_root/json/err.json
