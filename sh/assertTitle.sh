@@ -23,7 +23,7 @@ commander cd $(npm -g root)/se-interpreter
 #ensure ls -l node_modules
 #commander echo $PWD
 #RUN
-#cat1 $file_ok
+cat1 $file_ok
 #trace  $cmd_se  $file_ok
 commander $cmd_se  $file_ok 
 
