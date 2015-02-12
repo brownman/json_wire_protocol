@@ -2,21 +2,9 @@ language: node_js
 
 env:
   global:
-    - dir_tmp_bin=/tmp/bin
-    - PATH=$PATH:$dir_tmp_bin:/usr/games
-    - PORT=9515
-    - HOST='0.0.0.0'
-    - HTTP_INTERFACE="http://$HOST:$PORT"
-   # - HTTP_INTERFACE='http://127.0.0.1:4444/wd/hub'
-
-    #$BROWSER
-  matrix:
-    - BROWSER=chrome
-  #python:
-  #  - "2.6"
-
-before_install:
-  - mkdir -p $dir_tmp_bin
+    - something=nothing
+#  matrix:
+#    - BROWSER=chrome
 
 before_script:
   # Setup headless X per http://about.travis-ci.org/docs/user/gui-and-headless-browsers/
