@@ -13,6 +13,9 @@ source $dir_root/cfg/helper.cfg
 source $dir_root/cfg/vars.cfg
 }
 
+override(){
+  test -d $dir_tmp_bin || { mkdir -p $dir_tmp_bin; }
+}
 
 ensure_stuff(){
  ensure test -f $file_steps
@@ -23,8 +26,8 @@ fix_permission(){
 }
 
 install(){
-   mute sudo apt-get install -y -q $pkgs
-   mute npm install -g se-interpreter
+   dpkg -s $pkgs || { mute sudo apt-get install -y -q $pkgs; }
+   npm list se-interpreter || { mute npm install -g se-interpreter; }
    #install_selenium
    #commander $dir_root/sh/install_selenium.sh
 }
@@ -42,10 +45,12 @@ run(){
 
 steps(){
 set_env
+commander override
 commander ensure_stuff
 commander fix_permission
 commander install
 commander run
 }
+
 
 steps
