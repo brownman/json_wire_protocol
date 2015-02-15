@@ -27,24 +27,6 @@ fix_permission(){
 
 }
 
-install(){
-   dpkg -s $pkgs || { mute sudo apt-get install -y -q $pkgs; }
-   npm list se-interpreter || { mute npm install -g se-interpreter; }
-   #install_selenium
-   #commander $dir_root/sh/install_selenium.sh
-}
-
-run(){
- cat1 $file_steps
- local counter=1
- while read line;do
-  test -n "$line" || { exiting 0; }
-   broadcast $counter $line
-   commander "$line"
-   let counter+=1
- done < $file_steps
-}
-
 steps(){
 set_env
 commander override
@@ -52,7 +34,7 @@ commander ensure_stuff
 commander fix_permission
 #commander install
 #commander run
-commander $dir_root/docker/remote.sh
+commander bash -c $dir_root/docker/remote.sh
 }
 
 
