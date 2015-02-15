@@ -39,7 +39,9 @@ local file=$1
 test -f $file
 #cmd="node ./interpreter.js --driver-host=$host --driver-port=$port --driver-path='$path' --browser-browserName=chrome $file"
 #echo $cmd_se $file
-commander "$cmd_se $file"
+echo "[CMD] $cmd_se $file"
+
+eval "$cmd_se $file"
 }
 
 
@@ -49,6 +51,6 @@ set_env
 set_env1
 commander "curl $host:$port/$path/status"
 commander "test1 $file_ok"
-commander "test1 $file_err"
+( eval "test1 $file_err" )  || { trace OK there should be 1 err; }
 }
 steps
