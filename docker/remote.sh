@@ -1,15 +1,17 @@
-#!/bin/bash
-
+#!/usr/bin/env bash
+#echo hello world
 set -u
-file_test="${1:-}"
+file_test=${1:-}
 cmd_case=''
 
-if [ $file_test = 'test' ];then
-    cmd_case=default_assert
-elif [ -f $file_test ];then
+if [ "$file_test" = 'test' ];then
+cmd_case=default_assert
+elif [ -f "$file_test" ];then
+echo "[file exist] $file_test"
 cmd_case="test1 $file_test"
+trace "cmd_case: $cmd_case"
 else
-cmd_case="trace '[err] invalid arguments'"
+trace '[err] invalid arguments'
 exit 1;
 fi
 #if [ "$arguments" != 'test' ];then
@@ -33,10 +35,10 @@ commander 'env | grep 4444'
 set_env(){
 file_ok=$dir_root/json/ok.json
 file_err=$dir_root/json/err.json
-file_interpreter=$(npm -g root)/se-interpreter/interpreter.js
+dir_npm=$(npm -g root)
+commander "test -d $dir_npm"
+file_interpreter=$dir_npm/se-interpreter/interpreter.js
 browser=chrome
-
-
 }
 
 set_env1(){
@@ -55,8 +57,8 @@ path='/'
 
 
 test1(){
-local file=$1
-test -f $file
+local file="$1"
+test -f "$file"
 #cmd="node ./interpreter.js --driver-host=$host --driver-port=$port --driver-path='$path' --browser-browserName=chrome $file"
 #echo $cmd_se $file
 echo "[CMD] $cmd_se $file"
@@ -70,10 +72,10 @@ commander "test1 $file_ok"
 }
 
 steps(){
-intro
+#intro
 set_env
 set_env1
 commander "curl $host:$port/$path/status"
-$cmd_case
+commander "$cmd_case"
 }
 steps

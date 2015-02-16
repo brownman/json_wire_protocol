@@ -1,6 +1,7 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -u
-args="$@"
+file_test=${1:-}
+echo file_test $file_test
 export dir_root=$( cd `dirname $0`; echo $PWD; )
 ######temp:
 
@@ -28,12 +29,15 @@ fix_permission(){
 
 steps(){
 set_env
-commander override
-commander ensure_stuff
-commander fix_permission
+local file=$file_test
+
+#commander override
+#commander ensure_stuff
+#commander fix_permission
 #commander install
 #commander run
-commander bash -c $dir_root/docker/remote.sh $args
+commander bash -c "'$dir_root/docker/remote.sh $file'"
+#$file_test"
 }
 
 
