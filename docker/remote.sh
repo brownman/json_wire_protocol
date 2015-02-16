@@ -1,7 +1,27 @@
 #!/bin/bash
 
 set -u
-set -e
+file_test="${1:-}"
+cmd_case=''
+
+if [ $file_test = 'test' ];then
+    cmd_case=default_assert
+elif [ -f $file_test ];then
+cmd_case="test1 $file_test"
+else
+cmd_case="trace '[err] invalid arguments'"
+exit 1;
+fi
+#if [ "$arguments" != 'test' ];then
+#( test -v arguments && { test -f $arguments ; } && { trace "[file exist] $arguments"; } ) || { trace "[NO FILE INPUT] run default tests"; exit 1; }
+# file_test=$arguments
+#else
+#  trace '[default] showing default tests: assertOK+assertERR'
+#fi
+
+
+
+#set -e
 #command npm &>/dev/null || { trace 'npm not found'; exit 0; }
 commander npm -v
 commander test -v dir_root
@@ -44,13 +64,16 @@ echo "[CMD] $cmd_se $file"
 eval "$cmd_se $file"
 }
 
+default_assert(){
+commander "test1 $file_ok"
+( eval "test1 $file_err" )  || { trace OK there should be 1 err; }
+}
 
 steps(){
 intro
 set_env
 set_env1
 commander "curl $host:$port/$path/status"
-commander "test1 $file_ok"
-( eval "test1 $file_err" )  || { trace OK there should be 1 err; }
+$cmd_case
 }
 steps
