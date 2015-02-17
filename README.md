@@ -20,6 +20,7 @@ links
 solutions
 ----
 - selenium + basic access authentication [http basic auth](http://www.httpwatch.com/httpgallery/authentication/)
+- convert .html to .json [green](https://travis-ci.org/sebuilder/se-builder/pull_requests)
 
 alternative
 ----
