@@ -38,7 +38,8 @@ file_err=$dir_root/json/err.json
 dir_npm=$(npm -g root)
 commander "test -d $dir_npm"
 file_interpreter=$dir_npm/se-interpreter/interpreter.js
-browser=chrome
+browser1=firefox
+browser2=chrome
 }
 
 set_env1(){
@@ -46,7 +47,9 @@ set_env1(){
 host=$SELENIUM_PORT_4444_TCP_ADDR
 port=$SELENIUM_PORT_4444_TCP_PORT
 path='wd/hub'
-cmd_se="node $file_interpreter   --driver-host=$host --driver-port=$port --driver-path='$path' --browser-browserName=$browser"
+cmd_se1="node $file_interpreter   --driver-host=$host --driver-port=$port --driver-path='$path' --browser-browserName=$browser1"
+
+cmd_se2="node $file_interpreter   --driver-host=$host --driver-port=$port --driver-path='$path' --browser-browserName=$browser2"
 }
 
 set_env2(){
@@ -61,9 +64,11 @@ local file="$1"
 test -f "$file"
 #cmd="node ./interpreter.js --driver-host=$host --driver-port=$port --driver-path='$path' --browser-browserName=chrome $file"
 #echo $cmd_se $file
-echo "[CMD] $cmd_se $file"
+echo "[$browser1] $cmd_se1 $file"
+eval "$cmd_se1 $file"
+echo "[$browser2] $cmd_se2 $file"
+eval "$cmd_se2 $file"
 
-eval "$cmd_se $file"
 }
 
 default_assert(){
