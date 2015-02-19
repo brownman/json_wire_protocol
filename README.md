@@ -21,6 +21,8 @@ solutions
 ----
 - selenium + basic access authentication [http basic auth](http://www.httpwatch.com/httpgallery/authentication/)
 - convert .html to .json [green](https://travis-ci.org/sebuilder/se-builder/pull_requests)
+- [ record video ](https://github.com/rtc-io/dockerized-browsers/blob/master/base/scripts/setup-loopbackvideo.sh)
+
 
 alternative
 ----
