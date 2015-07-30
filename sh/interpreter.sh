@@ -2,9 +2,9 @@
 
 set_env(){
 host=$HOST
-
 browser=$BROWSER
-cmd_se="node ./interpreter.js   --driver-host=$host --driver-port=$port_standalone --driver-path='$path_standalone' --browser-browserName=$browser"
+
+cmd_se="node ./interpreter.js   --driver-host=$host --driver-port=$port --driver-path='$path' --browser-browserName=$browser"
 }
 
 ensure_stuff(){
