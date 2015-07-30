@@ -2,17 +2,8 @@
 
 set_env(){
 host=$HOST
-port_standalone=4444
-port_chromedriver=9515
 
-
-path_chromedriver='/'
-path_standalone='/wd/hub/'
-
-
-file_ok=$dir_root/json/ok.json
-file_err=$dir_root/json/err.json
-browser=chrome
+browser=$BROWSER
 cmd_se="node ./interpreter.js   --driver-host=$host --driver-port=$port_standalone --driver-path='$path_standalone' --browser-browserName=$browser"
 }
 
