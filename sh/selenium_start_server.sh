@@ -18,4 +18,4 @@ selenium_start(){
  commander  chromedriver &
 }
 
-selenium_start
+selenium_start1
