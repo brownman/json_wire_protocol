@@ -7,7 +7,7 @@ port_chromedriver=9515
 
 
 path_chromedriver='/'
-path_standalone='/wd/hub'
+path_standalone='/wd/hub/'
 
 
 file_ok=$dir_root/json/ok.json
