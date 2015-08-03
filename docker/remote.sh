@@ -38,7 +38,6 @@ file_err=$dir_root/json/err.json
 dir_npm=$(npm -g root)
 commander "test -d $dir_npm"
 file_interpreter=$dir_npm/se-interpreter/interpreter.js
-browser1=firefox
 browser2=chrome
 }
 
@@ -47,7 +46,7 @@ set_env1(){
 host=$SELENIUM_PORT_4444_TCP_ADDR
 port=$SELENIUM_PORT_4444_TCP_PORT
 path='wd/hub'
-cmd_se1="node $file_interpreter   --driver-host=$host --driver-port=$port --driver-path='$path' --browser-browserName=$browser1"
+#cmd_se1="node $file_interpreter   --driver-host=$host --driver-port=$port --driver-path='$path' --browser-browserName=$browser1"
 
 cmd_se2="node $file_interpreter   --driver-host=$host --driver-port=$port --driver-path='$path' --browser-browserName=$browser2"
 }
